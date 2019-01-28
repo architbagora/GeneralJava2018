@@ -63,11 +63,15 @@ public class BinaryTreePrint {
 	public static void main(String[] args) {
 		final Random random = new Random();
 		final int N = 6;
-		final int M = 100;
 		final BinaryTreePrint tree = new BinaryTreePrint();
-		for (int i = 0; i < N; i++) {
-			tree.insert(random.nextInt(M));
-		}
+		tree.insert(3);
+		tree.insert(2);
+		tree.insert(1);
+		tree.insert(4);
+		tree.insert(5);
+		tree.insert(6);
+		
+		
 		tree.printLineByLine();
 	}
 }

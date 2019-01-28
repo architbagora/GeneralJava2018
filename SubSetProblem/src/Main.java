@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class Main {
 
@@ -30,12 +31,17 @@ public class Main {
 	}
 
 	public static void printMeSubset(int[] input, boolean[] selectedNumbers) {
-		for (int i = 0; i < input.length; i++) {
+		/*for (int i = 0; i < input.length; i++) {
 			if(selectedNumbers[i]){
 				System.out.print(input[i]);
 			}
-		}
+		}*/
+			System.out.print(Arrays.toString(input));
+			System.out.println(Arrays.toString(selectedNumbers));
+		
 		System.out.println();
 	}
+	
+	
 
 }
