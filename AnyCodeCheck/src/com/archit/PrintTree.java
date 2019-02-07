@@ -34,8 +34,8 @@ public class PrintTree {
 
 		while (!queue.isEmpty()) {
 			current = queue.poll();
-			if (current == null && queue.size() != 0) {
-				queue.add(null);
+			if (/*current == null &&*/ queue.size() != 0) {
+				//queue.add(null);
 				System.out.println();
 			} else if (queue.size() == 0) {
 				break;

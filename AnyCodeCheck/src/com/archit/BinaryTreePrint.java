@@ -5,34 +5,7 @@ import java.util.Queue;
 import java.util.Random;
  
 public class BinaryTreePrint {
-	private class Node {
-		int data;
-		Node left;
-		Node right;
- 
-		Node(int data) {
-			this.data = data;
-		}
-	}
- 
-	private Node root;
- 
-	public void insert(int data) {
-		root = insert(root, data);
-	}
- 
-	private Node insert(Node x, int data) {
-		if (x == null) {
-			return new Node(data);
-		}
-		if (data < x.data) {
-			x.left = insert(x.left, data);
-		} else {
-			x.right = insert(x.right, data);
-		}
-		return x;
-	}
- 
+
 	public void printLineByLine() {
 		printLineByLine(root);
 	}
@@ -73,5 +46,32 @@ public class BinaryTreePrint {
 		
 		
 		tree.printLineByLine();
+	}
+	
+	private Node root;
+	 
+	public void insert(int data) {
+		root = insert(root, data);
+	}
+
+	private class Node {
+		int data;
+		Node left;
+		Node right;
+ 
+		Node(int data) {
+			this.data = data;
+		}
+	}
+	private Node insert(Node x, int data) {
+		if (x == null) {
+			return new Node(data);
+		}
+		if (data < x.data) {
+			x.left = insert(x.left, data);
+		} else {
+			x.right = insert(x.right, data);
+		}
+		return x;
 	}
 }
