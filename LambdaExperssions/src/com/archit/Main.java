@@ -9,22 +9,26 @@ public class Main {
 		List<String> list = getMeListOfIntegers(100000);
 		List<String> listOfStrings = null; 
 		
-		long startFor = System.nanoTime();
+		long startFor = System.currentTimeMillis();
 		listOfStrings = new ArrayList<>();
 		for (String integer : list) {
 			listOfStrings.add(integer + "A");
 		}
-		long endFor = System.nanoTime();
+		long endFor = System.currentTimeMillis();
 		System.out.println("TIME TAKEN BY DEAR FOREACH : " + (endFor - startFor));
 
 		
-		long startStream = System.nanoTime();
+		long startStream = System.currentTimeMillis();
 		listOfStrings = list.stream().map(integer -> integer+"A").collect(Collectors.toList());
-		long endStream = System.nanoTime();
+		long endStream = System.currentTimeMillis();
 
 		System.out.println("TIME TAKEN BY STREAM : " + (endStream - startStream));
 
-		System.out.println("Multiples : " + ((endStream - startStream) / (endFor - startFor)));
+		
+		
+		System.out.println("Time diff  LAMBDA-FOREACH : " + ((endStream - startStream)-(endFor - startFor)));
+		
+		System.out.println("% faster  FOR EACH: " + ((((endStream - startStream)-(endFor - startFor))* 100  / (endStream - startStream))));
 	}
 
 	public static List<String> getMeListOfIntegers(int sizeOfList) {
